@@ -1,0 +1,36 @@
+__pycache__/
+*.pyc
+sample_documents/
+vector_index.faiss
+chunk_store.pkl
+.venv/
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Hugging Face Cache
+.cache/
+huggingface/
+
+# FAISS Files
+vector_index.faiss
+chunk_store.pkl
+
+# Documents
+sample_documents/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

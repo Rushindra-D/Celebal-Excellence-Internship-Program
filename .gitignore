@@ -1,5 +1,40 @@
+# Virtual Environment
+.venv/
+venv/
+env/
 
-week6/mnist_png/
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# VS Code
+.vscode/
+
+# Hugging Face
+.cache/
+huggingface/
+
+# FAISS
+vector_index.faiss
+chunk_store.pkl
+
+# Logs
+*.log
+# Week 6 datasets
 week6/data/
+week6/mnist_png/
 
+# Python
+__pycache__/
+*.py[cod]
 
+# Virtual Environment
+.venv/
+
+# FAISS
+vector_index.faiss
+chunk_store.pkl
+
+# Hugging Face cache
+.cache/
