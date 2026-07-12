@@ -1,64 +1,203 @@
-# Document Question Answering System (RAG)
+# 📄 Document Question Answering System (RAG)
 
-A Retrieval-Augmented Generation (RAG) system that answers questions
-based on your own documents (PDFs or text files), instead of relying
-only on a language model's internal knowledge.
+A **Retrieval-Augmented Generation (RAG)** system that answers questions based on your own documents (PDFs or text files), instead of relying only on a language model's internal knowledge.
 
-## How it works
+## 🚀 Live Demo
 
-1. **Document Ingestion** — PDFs/text files are loaded and converted to raw text.
-2. **Text Chunking** — Text is split into smaller overlapping chunks.
-3. **Embedding Creation** — Each chunk is converted into a vector using `sentence-transformers`.
-4. **Vector Database** — Chunk embeddings are stored in a FAISS index.
-5. **Query Processing** — The user's question is embedded the same way.
-6. **Context Retrieval** — The most similar chunks are retrieved from FAISS.
-7. **Answer Generation** — A language model (`flan-t5-base`) generates an answer grounded in the retrieved context.
+🔗 **Streamlit App:** https://document-answering.streamlit.app/
 
-## Project structure
+---
 
-```
+## 📌 Overview
+
+This project implements a Retrieval-Augmented Generation (RAG) pipeline that enables users to upload custom documents and ask questions about them.
+
+Instead of relying solely on a language model's internal knowledge, the system retrieves the most relevant information from uploaded documents and generates context-aware, grounded answers.
+
+---
+
+## 🏗️ How It Works
+
+The RAG pipeline consists of the following stages:
+
+### 1. Document Ingestion
+- Upload PDF or text documents.
+- Extract raw text from documents.
+
+### 2. Text Chunking
+- Split documents into overlapping chunks.
+- Improves retrieval accuracy and preserves context.
+
+### 3. Embedding Creation
+- Convert each chunk into dense vector embeddings using **Sentence Transformers**.
+
+### 4. Vector Database
+- Store embeddings inside a **FAISS** vector index for efficient similarity search.
+
+### 5. Query Processing
+- Convert the user's question into an embedding.
+
+### 6. Context Retrieval
+- Retrieve the most relevant document chunks using vector similarity.
+
+### 7. Answer Generation
+- Use **Google FLAN-T5** to generate an answer grounded in the retrieved context.
+
+---
+
+# ✨ Features
+
+- 📄 Upload PDF or Text documents
+- 🔍 Semantic Search using FAISS
+- 🤖 Answer Generation using FLAN-T5
+- 📚 Context-aware responses
+- ⚡ Streamlit Web Interface
+- 🧠 Retrieval-Augmented Generation (RAG)
+
+---
+
+# 🛠️ Tech Stack
+
+- Python
+- Streamlit
+- Sentence Transformers
+- Hugging Face Transformers
+- FAISS
+- PyPDF
+- NumPy
+
+---
+
+# 📂 Project Structure
+
+```text
 rag-document-qa/
-├── main.py                       # entry point, ties every stage together
+│
+├── app.py                        # Streamlit Web App
+├── main.py                       # CLI entry point
 ├── requirements.txt
+│
 ├── rag_pipeline/
-│   ├── config.py                 # all tunable settings in one place
-│   ├── document_loader.py        # Stage 1: Document Ingestion
-│   ├── text_chunker.py           # Stage 2: Text Chunking
-│   ├── embedding_engine.py       # Stage 3: Embedding Creation
-│   ├── vector_store.py           # Stage 4: Vector Database
-│   └── answer_generator.py       # Stage 7: Answer Generation
-└── sample_documents/             # put your PDFs / text files here
+│   ├── config.py
+│   ├── document_loader.py
+│   ├── text_chunker.py
+│   ├── embedding_engine.py
+│   ├── vector_store.py
+│   └── answer_generator.py
+│
+└── sample_documents/
 ```
 
-## Setup
+---
+
+# ⚙️ Installation
+
+Clone the repository
+
+```bash
+git clone <repository-url>
+```
+
+Move into the project directory
+
+```bash
+cd rag-document-qa
+```
+
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage
+---
 
-1. Put your PDFs or `.txt` files inside the `sample_documents/` folder
-   (it gets created automatically on first run).
-2. Run:
+# ▶️ Running the Application
+
+## Option 1: Streamlit (Recommended)
+
+```bash
+streamlit run app.py
+```
+
+Open your browser:
+
+```
+http://localhost:8501
+```
+
+---
+
+## Option 2: Command Line
 
 ```bash
 python main.py
 ```
 
-3. Ask questions in the terminal. Type `exit` to quit.
+Type your question in the terminal.
 
-## Example
+Type **exit** to quit.
+
+---
+
+# 🌐 Live Deployment
+
+The application is deployed using **Streamlit Community Cloud**.
+
+### Live Demo
+
+👉 https://document-answering.streamlit.app/
+
+---
+
+# 📖 Example
+
+### Upload
 
 ```
-Ask a question: What is the main idea of the document?
-Answer: <generated answer grounded in the retrieved chunks>
-Sources: my_notes.pdf
+Research_Paper.pdf
 ```
 
-## Possible improvements
+### Question
 
-- Hybrid search (keyword + vector) for better retrieval
-- Re-ranking retrieved chunks before generation
-- Swapping in a stronger embedding or generation model
-- A simple web UI on top of the same pipeline
+```
+What is the main objective of the paper?
+```
+
+### Answer
+
+```
+The paper proposes a Retrieval-Augmented Generation (RAG) system that combines semantic search with language generation to answer questions based on custom documents.
+```
+
+---
+
+# 🚀 Future Improvements
+
+- Hybrid Search (Keyword + Vector Search)
+- Cross-Encoder Re-ranking
+- Support for Multiple File Formats
+- Conversation History
+- Multi-document Knowledge Base
+- Persistent Vector Database
+- Better Embedding Models
+- LLM API Integration (Gemini/OpenAI)
+
+---
+
+# 📚 Key Learnings
+
+- Retrieval-Augmented Generation (RAG)
+- Document Processing
+- Text Chunking
+- Sentence Embeddings
+- Vector Databases (FAISS)
+- Semantic Search
+- Hugging Face Transformers
+- Streamlit Deployment
+
+---
+
+# 📜 License
+
+This project is developed for educational purposes as part of the **Celebal Excellence Internship Program – Week 7 Assignment**.
