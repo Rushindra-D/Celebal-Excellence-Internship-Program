@@ -16,7 +16,7 @@ CHUNK_OVERLAP_IN_CHARACTERS = 100
 EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
 
 # Language model used to generate the final answer
-ANSWER_GENERATION_MODEL_NAME = "google/flan-t5-base"
+ANSWER_GENERATION_MODEL_NAME = "google/flan-t5-small"
 
 # How many chunks to retrieve for every question
 NUMBER_OF_CHUNKS_TO_RETRIEVE = 4
