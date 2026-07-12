@@ -1,7 +1,9 @@
-streamlit
+streamlit>=1.39.0
 pypdf==4.3.1
-sentence-transformers==3.0.1
-faiss-cpu==1.14.3
-transformers==4.44.2
-torch==2.5.1
-numpy==1.26.4
+numpy>=1.26.4
+
+faiss-cpu>=1.14.3
+
+transformers>=4.56.0
+sentence-transformers>=5.1.0
+torch>=2.9.0
